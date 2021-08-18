@@ -1,4 +1,4 @@
-package br.com.logusretail.consultorio.mapeadores;
+package br.com.logusretail.consultorio.utils.mapeadores;
 
 import java.util.List;
 

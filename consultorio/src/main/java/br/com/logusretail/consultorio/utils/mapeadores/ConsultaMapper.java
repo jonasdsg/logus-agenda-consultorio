@@ -1,4 +1,4 @@
-package br.com.logusretail.consultorio.mapeadores;
+package br.com.logusretail.consultorio.utils.mapeadores;
 
 import static java.util.stream.Collectors.toList;
 
@@ -7,9 +7,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.logusretail.consultorio.dto.ConsultaDTO;
-import br.com.logusretail.consultorio.entidades.Consulta;
-import br.com.logusretail.consultorio.entidades.Especialidade;
+import br.com.logusretail.consultorio.entidades.consulta.Consulta;
+import br.com.logusretail.consultorio.entidades.consulta.ConsultaDTO;
+import br.com.logusretail.consultorio.entidades.medico.Especialidade;
 
 @Service
 public class ConsultaMapper implements Mapeador<ConsultaDTO, Consulta> {
@@ -24,7 +24,8 @@ public class ConsultaMapper implements Mapeador<ConsultaDTO, Consulta> {
 		dto.medicos = medicoMapper.toListDTO(model.getMedicos());
 		dto.nomePaciente = model.getNomePaciente();
 		dto.numeroConsultorio = model.getNumeroConsultorio();
-
+		dto.especialidade = model.getEspecialidade().getDescricao();
+		
 		return dto;
 	}
 

@@ -1,4 +1,4 @@
-package br.com.logusretail.consultorio.mapeadores;
+package br.com.logusretail.consultorio.utils.mapeadores;
 
 import static java.util.stream.Collectors.toList;
 
@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import br.com.logusretail.consultorio.dto.MedicoDTO;
-import br.com.logusretail.consultorio.entidades.Medico;
+import br.com.logusretail.consultorio.entidades.medico.Medico;
+import br.com.logusretail.consultorio.entidades.medico.MedicoDTO;
 
 @Service
 public class MedicoMapper implements Mapeador<MedicoDTO, Medico> {

@@ -1,19 +1,21 @@
 package br.com.logusretail.consultorio.entidades.medico;
 
 public enum Especialidade {
-	CIRURGIA("Cirurgia"),
-	OUTRA("Outras Categorias");
+	CIRURGIA("Cirurgia"), OUTRA("Outras Categorias");
 
 	private String descricao;
 
-	Especialidade(String desc){
-	 this.descricao = desc;
+	Especialidade(String desc) {
+		this.descricao = desc;
 	}
-	
+
 	public static Especialidade getInstance(String desc) {
-		return (desc!=null && CIRURGIA.getDescricao().toLowerCase().equals(desc.toLowerCase())) ? CIRURGIA : OUTRA ;
+		if (desc != null) {
+			return (CIRURGIA.getDescricao().toLowerCase().equals(desc.toLowerCase())) ? CIRURGIA : OUTRA;
+		}
+		return null;
 	}
-	
+
 	public String getDescricao() {
 		return this.descricao;
 	}

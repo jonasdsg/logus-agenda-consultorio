@@ -4,11 +4,17 @@ import static java.util.stream.Collectors.toList;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import br.com.logusretail.consultorio.dto.ConsultaDTO;
 import br.com.logusretail.consultorio.entidades.Consulta;
+import br.com.logusretail.consultorio.entidades.Especialidade;
 
+@Service
 public class ConsultaMapper implements Mapeador<ConsultaDTO, Consulta> {
-	private MedicoMapper medicoMapper = new MedicoMapper();
+	@Autowired
+	private MedicoMapper medicoMapper;
 
 	@Override
 	public ConsultaDTO toDTO(Consulta model) {
@@ -24,8 +30,11 @@ public class ConsultaMapper implements Mapeador<ConsultaDTO, Consulta> {
 
 	@Override
 	public Consulta toModel(ConsultaDTO dto) {
-		// TODO Auto-generated method stub
-		return null;
+		Consulta consulta = new Consulta(
+					dto.id, dto.nomePaciente,
+					medicoMapper.toListModel(dto.medicos), dto.data,
+					Especialidade.getInstance(dto.especialidade), dto.numeroConsultorio);
+		return consulta;
 	}
 
 	@Override

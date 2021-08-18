@@ -4,9 +4,12 @@ import static java.util.stream.Collectors.toList;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import br.com.logusretail.consultorio.dto.MedicoDTO;
 import br.com.logusretail.consultorio.entidades.Medico;
 
+@Service
 public class MedicoMapper implements Mapeador<MedicoDTO, Medico> {
 
 	@Override

@@ -9,4 +9,5 @@ public class ConsultaDTO {
 	public List<MedicoDTO> medicos;
 	public LocalDateTime data;
 	public Integer numeroConsultorio;
+	public String especialidade;
 }

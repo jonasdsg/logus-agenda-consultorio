@@ -2,6 +2,7 @@ package br.com.logusretail.consultorio.controladores;
 
 import java.util.List;
 
+import javax.validation.Valid;
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,7 @@ public class ConsultaController {
 	
 	@PostMapping
 	public ResponseEntity<ConsultaDTO> save(
-			@RequestBody ConsultaDTO dto){
+			@RequestBody @Valid ConsultaDTO dto){
 		return ResponseEntity.ok(consultorioServico.salvar(dto));
 	}
 	

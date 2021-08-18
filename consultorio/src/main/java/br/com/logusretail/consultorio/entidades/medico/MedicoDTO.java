@@ -1,4 +1,4 @@
-package br.com.logusretail.consultorio.dto;
+package br.com.logusretail.consultorio.entidades.medico;
 
 import java.time.LocalDate;
 

@@ -1,4 +1,4 @@
-package br.com.logusretail.consultorio.entidades;
+package br.com.logusretail.consultorio.entidades.consulta;
 
 import java.time.LocalDateTime;
 
@@ -10,6 +10,8 @@ public class InformacaoConsulta {
 	private String nomePaciente;
 	private LocalDateTime data;
 	
+	@Deprecated
+	public InformacaoConsulta() {} //Construtor JPA
 	public InformacaoConsulta(Integer numeroConsultorio, String nomePaciente, LocalDateTime data) {
 		this.numeroConsultorio = numeroConsultorio;
 		this.nomePaciente = nomePaciente;

@@ -1,4 +1,4 @@
-package br.com.logusretail.consultorio.entidades;
+package br.com.logusretail.consultorio.entidades.medico;
 
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+import br.com.logusretail.consultorio.entidades.consulta.Consulta;
 
 @Entity
 public class Medico {

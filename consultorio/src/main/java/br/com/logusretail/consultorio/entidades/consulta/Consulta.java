@@ -1,4 +1,4 @@
-package br.com.logusretail.consultorio.entidades;
+package br.com.logusretail.consultorio.entidades.consulta;
 
 import static javax.persistence.EnumType.STRING;
 import static javax.persistence.FetchType.LAZY;
@@ -13,6 +13,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import br.com.logusretail.consultorio.entidades.medico.Especialidade;
+import br.com.logusretail.consultorio.entidades.medico.Medico;
 
 @Entity
 public class Consulta {

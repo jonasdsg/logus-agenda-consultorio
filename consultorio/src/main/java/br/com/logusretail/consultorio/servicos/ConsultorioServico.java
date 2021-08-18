@@ -61,4 +61,12 @@ public class ConsultorioServico {
 		Boolean b = params.stream().filter(o -> isNull(o)).collect(toList()).size() > 0;
 		return b;
 	}
+
+	public ConsultaDTO remover(ConsultaDTO dto) {
+		Consulta consulta = consultaRepositorio.findById(dto.id).get();
+		if(consulta!=null) {
+			consultaRepositorio.deleteById(consulta.getId());
+		}
+		return null;
+	}
 }

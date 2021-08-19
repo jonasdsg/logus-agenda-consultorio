@@ -1,0 +1,39 @@
+<div class="container" [formGroup]="pacienteForm">
+    <div class="row">
+        <div class="form-group col-md-3">
+            <label><strong>Nome Paciente</strong></label>
+            <input type="text" id="nomePaciente" class="form-control" formControlName="nomePaciente">
+        </div>
+        <div class="form-group col-md-3">
+            <label><strong>Numero Consultorio</strong></label>
+            <input type="text" id="numeroConsultorio" class="form-control" formControlName="numeroConsultorio">
+        </div>
+        <div class="form-group col-md-3">
+            <label><strong>Data</strong></label>
+            <input type="text" id="data" class="form-control" formControlName="data">
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-3">
+            <label><strong>Nome Medico</strong></label>
+            <input type="text" id="nmedico" class="form-control" formControlName="nomeDoMedico">
+        </div>
+        
+        <div class="form-group col-md-3">
+            <label><strong>CRM</strong></label>
+            <input type="text" id="crmmedico" class="form-control" formControlName="crm">
+        </div>
+
+        <div class="form-group col-md-3">
+            <label><strong>Especialidade Médica</strong></label>
+            <select id="consepeci" class="form-control" formControlName="especialidade">
+                <option value="CIRURGIA">CIRURGIA</option>
+                <option value="OUTRA">OUTRA</option>
+            </select>
+        </div>
+
+    </div>
+    <button class="btn btn-primary" (click)="emissor()">Salvar</button>
+</div>

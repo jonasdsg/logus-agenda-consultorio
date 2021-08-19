@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nome paciente</th>
+        <th scope="col">Nome Medico</th>
+        <th scope="col">Consultorio</th>
+        <th scope="col">Data</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let consulta of consultas">
+        <td>{{ consulta.nomePaciente }}</td>
+        <td>{{ nomeMedicoResponsavel(consulta.medicos)}}</td>
+        <td>{{ consulta.numeroConsultorio }}</td>
+        <td>{{ consulta.data | date: 'dd/MM/yyy HH:mm'}}</td>
+      </tr>
+    </tbody>
+  </table>

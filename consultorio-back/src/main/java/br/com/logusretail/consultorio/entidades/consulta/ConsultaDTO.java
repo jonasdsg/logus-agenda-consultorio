@@ -8,9 +8,9 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import br.com.logusretail.consultorio.entidades.medico.MedicoDTO;
-import br.com.logusretail.consultorio.utils.parsers.ValidaMedicosPorEspecialidade;
+import br.com.logusretail.consultorio.utils.parsers.ValidaConsulta;
 
-@ValidaMedicosPorEspecialidade(message = "Verifique se a especialidade é cirurgia, ou se médicos está nulo!")
+@ValidaConsulta(message = "Verifique se a especialidade é cirurgia, ou se médicos está nulo!")
 public class ConsultaDTO {
 	public Long id;
 	@NotNull(message = "O paciente não pode ser nulo!")

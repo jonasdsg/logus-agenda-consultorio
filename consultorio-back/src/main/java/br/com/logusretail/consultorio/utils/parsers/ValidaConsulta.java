@@ -10,8 +10,8 @@ import javax.validation.Payload;
 
 @Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = { ValidaEspecialidade.class })
-public @interface ValidaMedicosPorEspecialidade {
+@Constraint(validatedBy = { ValidaConsultaMedica.class })
+public @interface ValidaConsulta {
 	String message() default "Valor inválido";
 
 	Class<?>[] groups() default {};

@@ -1,4 +1,4 @@
-<div class="container" [formGroup]="pacienteForm">
+<div class="container col-md-12 align-items-center" [formGroup]="pacienteForm">
     <div class="row">
         <div class="form-group col-md-3">
             <label><strong>Nome Paciente</strong></label>
@@ -35,5 +35,5 @@
         </div>
 
     </div>
-    <button class="btn btn-primary" (click)="emissor()">Salvar</button>
+    <button class="btn btn-primary" (click)="emissor()">{{nomeBotao}}</button>
 </div>

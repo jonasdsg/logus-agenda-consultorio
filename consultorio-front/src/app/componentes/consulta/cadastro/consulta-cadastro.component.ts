@@ -1,3 +1,4 @@
+import { Consulta } from './../../../models/consulta.model';
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { ConsultaService } from './../consulta.service';
@@ -6,7 +7,6 @@ import { ConsultaService } from './../consulta.service';
     templateUrl: 'consulta-cadastro.component.html'
 })
 export class ConsultaCadastroComponent implements OnInit {
-    message: string = "Rota cadastro funcionando!"
     constructor(private fb: FormBuilder,
         private consultaService: ConsultaService) { }
 
@@ -19,8 +19,10 @@ export class ConsultaCadastroComponent implements OnInit {
         console.log(e)
     }
 
-    salvar() {
-
+    salvar(consulta:Consulta) {
+        this.consultaService.save(consulta).subscribe(e=>{
+            console.log(e)
+        })
     }
 
     private _findMedico() {

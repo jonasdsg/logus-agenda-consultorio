@@ -11,6 +11,9 @@ export class ConsultaComponent implements OnInit {
     public dadosFormulario: EventEmitter<Consulta> = new EventEmitter();
     @Input()
     public consulta: Consulta;
+    @Input()
+    public nomeBotao:string;
+    
     public pacienteForm: FormGroup = null;
 
     constructor(private fb: FormBuilder) { }

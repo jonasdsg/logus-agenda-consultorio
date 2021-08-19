@@ -1,1 +1,8 @@
-{{ message }}
+<campos-consulta class="mb-3"
+    nomeBotao="Pesquisar" 
+    (dadosFormulario)="buscarConsultas($event)">
+</campos-consulta>
+<consulta-listagem 
+    *ngIf="consultas"
+    [consultas]="consultas">
+</consulta-listagem>

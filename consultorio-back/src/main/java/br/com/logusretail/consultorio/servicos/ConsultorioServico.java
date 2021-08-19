@@ -2,6 +2,7 @@ package br.com.logusretail.consultorio.servicos;
 
 import static java.util.Arrays.asList;
 import static java.util.Objects.isNull;
+import static java.util.Objects.nonNull;
 import static java.util.stream.Collectors.toList;
 
 import java.time.LocalDateTime;
@@ -66,6 +67,14 @@ public class ConsultorioServico {
 		Consulta consulta = consultaRepositorio.findById(dto.id).get();
 		if(consulta!=null) {
 			consultaRepositorio.deleteById(consulta.getId());
+		}
+		return null;
+	}
+
+	public ConsultaDTO buscarPorId(Long id) {
+		Consulta c = consultaRepositorio.findById(id).get();
+		if(nonNull(c)) {
+			return mapper.toDTO(c);
 		}
 		return null;
 	}

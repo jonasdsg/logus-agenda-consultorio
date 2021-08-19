@@ -32,7 +32,7 @@ public class ValidacaoService {
 
 	public Boolean validarConsulta(ConsultaDTO dto) {
 		if(nonNull(dto) && nonNull(dto.medicos)) {
-			List<Consulta> consultas = consultaRepositorio.findConsultasNoMesmoConsultorioMesmoDia(dto.numeroConsultorio,dto.data.toLocalDate());
+			List<Consulta> consultas = consultaRepositorio.findConsultasNoMesmoConsultorioMesmoDia(dto.numeroConsultorio,dto.data);
 			Boolean dentroDoLimiteDiario = verificaConsultasPorDia(consultas);
 			Boolean dentroDoLimiteDeConsultasPorConsultorio = verificaQuantidadeConsultaPorConsultorio(consultas,dto);
 			Boolean dentroDoLimiteDeConsultasNoMesmoHorario = verificaQuantidadeConsultaNoMesmoHorario(consultas, dto.data);

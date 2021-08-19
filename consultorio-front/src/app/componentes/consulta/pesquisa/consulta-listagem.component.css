@@ -1,0 +1,9 @@
+.desabilitar-em-tela-pequena{
+    visibility: visible;
+}
+
+@media(max-width: 400px) {
+    .desabilitar-em-tela-pequena {
+      visibility: hidden;
+    }
+  }

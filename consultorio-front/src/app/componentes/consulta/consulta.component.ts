@@ -14,12 +14,12 @@ export class ConsultaComponent implements OnInit {
     @Input()
     public nomeBotao:string;
     
-    public pacienteForm: FormGroup = null;
+    public consultaForm: FormGroup = null;
 
     constructor(private fb: FormBuilder) { }
 
     ngOnInit(): void {
-        this.pacienteForm = this.fb.group({
+        this.consultaForm = this.fb.group({
             nomePaciente: null,
             nomeDoMedico: null,
             especialidade: null,
@@ -35,7 +35,7 @@ export class ConsultaComponent implements OnInit {
     }
 
     getParams(): Consulta {    
-        let form: FormConsulta = this.pacienteForm.getRawValue();
+        let form: FormConsulta = this.consultaForm.getRawValue();
         
         let consulta:Consulta = {
             id:null,

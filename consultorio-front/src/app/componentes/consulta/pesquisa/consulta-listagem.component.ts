@@ -4,12 +4,13 @@ import { Component, Input } from "@angular/core";
 
 @Component({
     selector: 'consulta-listagem',
-    templateUrl: './consulta-listagem.component.html'
+    templateUrl: './consulta-listagem.component.html',
+    styleUrls:['./consulta-listagem.component.css']
 })
 export class ConsultaListagemComponent {
     @Input() consultas:Consulta[];
 
     nomeMedicoResponsavel(medicos:Medico[]){
-        return medicos.join(',');
+        return medicos[0].nome;
     }
 }

@@ -1,5 +1,6 @@
 package br.com.logusretail.consultorio.repositorio;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -28,5 +29,8 @@ public interface ConsultaRepositorio extends CrudRepository<Consulta, Long> {
 			+ " OR m.crm = :crm"
 			+ " ORDER BY c.informacaoConsulta.data DESC")
 	public List<Consulta> findUsingFilter(String crm, LocalDateTime data, String nomePaciente, Especialidade especialidade,Integer numeroConsultorio);
+
+	@Query("SELECT c FROM Contulta c WHERE c.informacaoConsulta.numeroConsultorio =:numeroConsultorio AND c.informacaoConsulta.data =:data")
+	public List<Consulta> findConsultasNoMesmoConsultorioMesmoDia(Integer numeroConsultorio,LocalDate data);
 
 }

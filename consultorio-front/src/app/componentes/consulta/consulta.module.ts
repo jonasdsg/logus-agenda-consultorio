@@ -4,8 +4,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 
-import { ConsultaCadastroComponent } from './cadastro/consulta-cadastro.component';
 import { ConsultaRouting } from './consulta.routing';
+import { ConsultaCadastroComponent } from './cadastro/consulta-cadastro.component';
+import { DataDirectiveModule } from './../../utils/data-directive.module';
 import { ConsultaPesquisaComponent } from './pesquisa/consulta-pesquisa.component';
 
 
@@ -14,11 +15,12 @@ import { ConsultaPesquisaComponent } from './pesquisa/consulta-pesquisa.componen
         ConsultaCadastroComponent,
         ConsultaPesquisaComponent,
         ConsultaListagemComponent,
-        ConsultaComponent
+        ConsultaComponent,
     ],
     imports:[
         CommonModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        DataDirectiveModule
     ],
     exports:[
         ConsultaRouting

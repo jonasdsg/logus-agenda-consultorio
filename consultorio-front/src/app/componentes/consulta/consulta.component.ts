@@ -34,6 +34,10 @@ export class ConsultaComponent implements OnInit {
         this.dadosFormulario.emit(consulta);
     }
 
+    getData(data:string){
+        this.consultaForm.get('data').setValue(data);
+    }
+
     getParams(): Consulta {    
         let form: FormConsulta = this.consultaForm.getRawValue();
         

@@ -13,7 +13,7 @@
         </div>
         <div class="form-group col-auto">
             <label><strong>Nascimento</strong></label>
-            <input type="text" name="nascimento" id="nascimento" class="form-control" formControlName="nascimento">
+            <input type="text" name="nascimento" id="nascimento" class="form-control" dataDirective formato="data" (aoEmitirData)="getData($event)">
         </div>
     </div>
 </div>

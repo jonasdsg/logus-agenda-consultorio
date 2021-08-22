@@ -1,11 +1,13 @@
-import { ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { DataDirectiveModule } from './../../utils/data-directive.module';
 import { NgModule } from "@angular/core";
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { MedicoRouting } from './medico.routing';
-import { MedicoComponent } from './medico.component';
-import { MedicoPesquisaComponent } from './pesquisa/medico-pesquisa.component';
 import { MedicoCadastroComponent } from './cadastro/medico-cadastro.component';
+import { MedicoComponent } from './medico.component';
+import { MedicoRouting } from './medico.routing';
+import { MedicoPesquisaComponent } from './pesquisa/medico-pesquisa.component';
+
 
 @NgModule({
     declarations:[
@@ -13,7 +15,7 @@ import { MedicoCadastroComponent } from './cadastro/medico-cadastro.component';
         MedicoCadastroComponent,
         MedicoPesquisaComponent
     ],
-    imports:[CommonModule,ReactiveFormsModule],
+    imports:[CommonModule,ReactiveFormsModule,DataDirectiveModule],
     exports:[MedicoRouting]
 })
 export class MedicoModule{}

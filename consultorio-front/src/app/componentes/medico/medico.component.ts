@@ -22,7 +22,7 @@ export class MedicoComponent implements OnInit {
         })
     }
 
-    getParams():Medico {
+    getParams(): Medico {
 
         let form = this.medicoForm.getRawValue();
         let param: Medico = {
@@ -35,7 +35,11 @@ export class MedicoComponent implements OnInit {
         return param;
     }
 
-    public emitir() {
+    getData(data: string) {
+        this.medicoForm.get('nascimento').setValue(data)
+    }
+
+    emitir() {
         this.aoEmitirMedico.emit(this.getParams());
     }
 }

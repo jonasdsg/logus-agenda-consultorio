@@ -1,0 +1,23 @@
+<medico-component
+    nomeBotao="Pesquisar"
+    (aoEmitirMedico)="buscar($event)">
+</medico-component>
+
+<div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col desabilitar-em-tela-pequena">CRM</th>
+          <th scope="col desabilitar-em-tela-pequena">Idade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let medico of medicos">
+          <td>{{ medico.nome }}</td>
+          <td>{{ medico.crm }}</td>
+          <td>{{ calcularIdade(medico.nascimento)}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

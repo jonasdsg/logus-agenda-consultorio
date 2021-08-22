@@ -3,23 +3,39 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
 @Component({
-    selector:'medico-component',
+    selector: 'medico-component',
     templateUrl: 'medico.component.html'
 })
 export class MedicoComponent implements OnInit {
-    public medicoForm:FormGroup;
+    public medicoForm: FormGroup;
     @Input()
-    public nomeBotao:string;
+    public nomeBotao: string;
     @Output()
-    private aoEmitirMedico:EventEmitter<Medico> = new EventEmitter<Medico>();
+    public aoEmitirMedico: EventEmitter<Medico> = new EventEmitter<Medico>();
 
-    constructor(private fb:FormBuilder){}
+    constructor(private fb: FormBuilder) { }
     ngOnInit(): void {
         this.medicoForm = this.fb.group({
-            nomeMedico:null,
-            crm:null,
-            nascimento:null
+            nomeMedico: null,
+            crm: null,
+            nascimento: null
         })
     }
-    public emitir(){}
+
+    getParams():Medico {
+
+        let form = this.medicoForm.getRawValue();
+        let param: Medico = {
+            id: null,
+            nome: form.nomeMedico,
+            crm: form.crm,
+            nascimento: form.nascimento,
+        }
+
+        return param;
+    }
+
+    public emitir() {
+        this.aoEmitirMedico.emit(this.getParams());
+    }
 }

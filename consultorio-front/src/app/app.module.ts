@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { ConsultaModule } from './componentes/consulta/consulta.module';
+import { MedicoModule } from './componentes/medico/medico.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ConsultaModule } from './componentes/consulta/consulta.module';
     BrowserModule,
     HttpClientModule,
     
-    ConsultaModule
+    ConsultaModule,
+    MedicoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,6 +11,6 @@ export class ConsultaListagemComponent {
     @Input() consultas:Consulta[];
 
     nomeMedicoResponsavel(medicos:Medico[]){
-        return medicos[0].nome;
+        return medicos[0]?.nome || medicos[1]?.nome || 'SEM NOME';
     }
 }

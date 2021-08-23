@@ -28,7 +28,10 @@ public interface ConsultaRepositorio extends CrudRepository<Consulta, Long> {
 	public List<Consulta> findUsingFilter(String crm, LocalDateTime data, String nomePaciente,
 			Especialidade especialidade, Integer numeroConsultorio);
 
-	@Query("SELECT c FROM Consulta c WHERE c.informacaoConsulta.numeroConsultorio =:numeroConsultorio AND GETDATE(c.informacaoConsulta.data) =GETDATE(:data)")
+	@Query("SELECT c FROM Consulta c "
+			+ " WHERE c.informacaoConsulta.numeroConsultorio =:numeroConsultorio "
+			+ " AND DAY_OF_YEAR(c.informacaoConsulta.data) = DAY_OF_YEAR(:data) "
+			+ " AND YEAR(c.informacaoConsulta.data) = YEAR(:data)")
 	public List<Consulta> findConsultasNoMesmoConsultorioMesmoDia(Integer numeroConsultorio, LocalDateTime data);
 
 }

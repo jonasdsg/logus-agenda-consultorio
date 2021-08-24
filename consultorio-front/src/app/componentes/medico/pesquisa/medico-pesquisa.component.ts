@@ -12,6 +12,7 @@ export class MedicoPesquisaComponent {
     constructor(private medicoService:MedicoService){}
 
     calcularIdade(data:Date){
+        return new Date().getFullYear() - new Date(data).getFullYear();
     }
 
     buscar(medico:Medico){

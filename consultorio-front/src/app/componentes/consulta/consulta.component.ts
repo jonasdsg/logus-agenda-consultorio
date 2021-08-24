@@ -13,6 +13,8 @@ export class ConsultaComponent implements OnInit {
     public consulta: Consulta;
     @Input()
     public nomeBotao:string;
+    @Input()    
+    public nomeTela:string;
     
     public consultaForm: FormGroup = null;
 

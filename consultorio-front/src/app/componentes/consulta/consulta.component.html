@@ -1,42 +1,47 @@
 <div class="container" [formGroup]="consultaForm">
-    <div class="d-flex flex-row justify-content-end">
-        <button class="btn btn-primary col-md-3" (click)="emissor()">{{nomeBotao}}</button>
-    </div>
-    <div class="row">
-        <div class="form-group col-md-4">
-            <label><strong>Nome Paciente</strong></label>
-            <input type="text" id="nomePaciente" class="form-control" formControlName="nomePaciente">
+    <header>
+        <h1>{{nomeTela}}</h1>
+        <div class="d-flex flex-row justify-content-end">
+            <button class="btn btn-primary col-md-3" (click)="emissor()">{{nomeBotao}}</button>
         </div>
-        <div class="form-group col-md-4">
-            <label><strong>Numero Consultorio</strong></label>
-            <input type="text" id="numeroConsultorio" class="form-control" formControlName="numeroConsultorio">
+    </header>
+    <main>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label><strong>Nome Paciente</strong></label>
+                <input type="text" id="nomePaciente" class="form-control" formControlName="nomePaciente">
+            </div>
+            <div class="form-group col-md-4">
+                <label><strong>Numero Consultorio</strong></label>
+                <input type="text" id="numeroConsultorio" class="form-control" formControlName="numeroConsultorio">
+            </div>
+            <div class="form-group col-md-4">
+                <label><strong>Data</strong></label>
+                <input type="text" id="data" class="form-control" dataDirective formato="dataComHora" (aoEmitirData)="getData($event)">
+            </div>
+    
         </div>
-        <div class="form-group col-md-4">
-            <label><strong>Data</strong></label>
-            <input type="text" id="data" class="form-control" dataDirective formato="dataComHora" (aoEmitirData)="getData($event)">
+    
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label><strong>Nome Medico</strong></label>
+                <input type="text" id="nmedico" class="form-control" formControlName="nomeDoMedico">
+            </div>
+            
+            <div class="form-group col-md-4">
+                <label><strong>CRM</strong></label>
+                <input type="text" id="crmmedico" class="form-control" formControlName="crm">
+            </div>
+    
+            <div class="form-group col-md-4">
+                <label><strong>Especialidade Médica</strong></label>
+                <select id="consepeci" class="form-control" formControlName="especialidade">
+                    <option value="CIRURGIA">CIRURGIA</option>
+                    <option value="OUTRA">OUTRA</option>
+                </select>
+            </div>
+    
         </div>
-
-    </div>
-
-    <div class="row">
-        <div class="form-group col-md-4">
-            <label><strong>Nome Medico</strong></label>
-            <input type="text" id="nmedico" class="form-control" formControlName="nomeDoMedico">
-        </div>
-        
-        <div class="form-group col-md-4">
-            <label><strong>CRM</strong></label>
-            <input type="text" id="crmmedico" class="form-control" formControlName="crm">
-        </div>
-
-        <div class="form-group col-md-4">
-            <label><strong>Especialidade Médica</strong></label>
-            <select id="consepeci" class="form-control" formControlName="especialidade">
-                <option value="CIRURGIA">CIRURGIA</option>
-                <option value="OUTRA">OUTRA</option>
-            </select>
-        </div>
-
-    </div>
+    </main>
     
 </div>

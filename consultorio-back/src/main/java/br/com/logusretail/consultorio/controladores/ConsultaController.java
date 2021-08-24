@@ -1,10 +1,10 @@
 package br.com.logusretail.consultorio.controladores;
 
 import java.util.List;
+import static java.util.Objects.isNull;
 
 import javax.validation.Valid;
 import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.logusretail.consultorio.entidades.consulta.ConsultaDTO;
 import br.com.logusretail.consultorio.servicos.ConsultorioServico;
@@ -45,8 +46,12 @@ public class ConsultaController {
 	
 	@PostMapping
 	public ResponseEntity<ConsultaDTO> save(
-			@RequestBody @Valid ConsultaDTO dto){
-		return ResponseEntity.ok(consultorioServico.salvar(dto));
+			@RequestBody @Valid ConsultaDTO dto,UriComponentsBuilder uriComponentsBuilder){
+			ConsultaDTO retorno = consultorioServico.salvar(dto);
+		return isNull(retorno) 
+			? ResponseEntity.badRequest().build() 
+			: ResponseEntity.created(uriComponentsBuilder.path("/consulta/{id}")
+				.buildAndExpand(retorno.id).toUri()).body(retorno);		
 	}
 	
 	@DeleteMapping

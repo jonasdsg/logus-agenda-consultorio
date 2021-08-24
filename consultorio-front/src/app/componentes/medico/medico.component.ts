@@ -10,6 +10,8 @@ export class MedicoComponent implements OnInit {
     public medicoForm: FormGroup;
     @Input()
     public nomeBotao: string;
+    @Input()
+    public nomeTela: string;
     @Output()
     public aoEmitirMedico: EventEmitter<Medico> = new EventEmitter<Medico>();
 

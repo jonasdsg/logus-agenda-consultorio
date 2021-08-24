@@ -1,19 +1,24 @@
 <div class="container" [formGroup]="medicoForm">
-    <div class="d-flex flex-row justify-content-end">
-        <button (click)="emitir()" class="btn btn-primary col-md-3">{{nomeBotao}}</button>
-    </div>
-    <div class="row">
-        <div class="form-group col-auto">
-            <label><strong>Nome:</strong></label>
-            <input type="text" name="nome_medico" id="nome_medico" class="form-control" formControlName="nomeMedico">
+    <header>
+        <h1>{{nomeTela}}</h1>
+        <div class="d-flex flex-row justify-content-end">
+            <button (click)="emitir()" class="btn btn-primary col-md-3">{{nomeBotao}}</button>
         </div>
-        <div class="form-group col-auto">
-            <label><strong>CRM</strong></label>
-            <input type="text" name="crm" id="crm" class="form-control" formControlName="crm">
+    </header>
+    <main>
+        <div class="row">
+            <div class="form-group col-auto">
+                <label><strong>Nome:</strong></label>
+                <input type="text" name="nome_medico" id="nome_medico" class="form-control" formControlName="nomeMedico">
+            </div>
+            <div class="form-group col-auto">
+                <label><strong>CRM</strong></label>
+                <input type="text" name="crm" id="crm" class="form-control" formControlName="crm">
+            </div>
+            <div class="form-group col-auto">
+                <label><strong>Nascimento</strong></label>
+                <input type="text" name="nascimento" id="nascimento" class="form-control" dataDirective formato="data" (aoEmitirData)="getData($event)">
+            </div>
         </div>
-        <div class="form-group col-auto">
-            <label><strong>Nascimento</strong></label>
-            <input type="text" name="nascimento" id="nascimento" class="form-control" dataDirective formato="data" (aoEmitirData)="getData($event)">
-        </div>
-    </div>
+    </main>
 </div>
